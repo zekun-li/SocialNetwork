@@ -94,7 +94,7 @@ for comment in comment_final_label:
 		X_unigram[counter,token] =  words_dict[word]	
 
 
-X_unigram = preprocessing.scale(X_unigram)
+#X_unigram = preprocessing.scale(X_unigram)
 #np.savez('data/unigram_data.npz',X = X_unigram, y = y)
 
 
@@ -172,7 +172,7 @@ for comment in comment_final_label:
 			X_bigram[counter,token] =  words_dict[word]
 
 print  'bigram dimension: '+str(len(comment_final_label)) +' '+ str(token_count)
-X_bigram = preprocessing.scale(X_bigram)
+#X_bigram = preprocessing.scale(X_bigram)
 #np.savez('data/bigram_data.npz',X = X_bigram, y = y)
 
 X = np.hstack((X_unigram,X_bigram))

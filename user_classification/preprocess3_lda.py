@@ -103,7 +103,7 @@ for comment in comment_final_label:
 	# go to entry of next comment
 	index += 1
 
-lda_feature = preprocessing.scale(lda_feature)	
+#lda_feature = preprocessing.scale(lda_feature)	
 
 print 'step 3 of 3 finished.'
 print 'lda dimension: '+str(np.shape(lda_feature))
