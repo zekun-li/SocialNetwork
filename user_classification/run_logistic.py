@@ -25,11 +25,12 @@ def main():
 
 	# Split the dataset to train/test set
 	X_train, X_test, y_train, y_test = train_test_split(
-	    X, y, test_size=0.4, random_state=0)
+	    X, y, test_size=0.2, random_state=0)
 
 
 	# Set the parameters by cross-validation
-	tuned_parameters = [{'penalty': ['l2'], 'C':np.logspace(-5, 4, 10), 'solver': ['sag'] ,'max_iter':[500] },
+	tuned_parameters = [{},
+						{'penalty': ['l2'], 'C':np.logspace(-5, 4, 10), 'solver': ['sag'] ,'max_iter':[500] },
 						{'penalty': ['l2'], 'C':np.logspace(-5, 4, 10), 'solver': ['newton-cg'] ,'max_iter':[500] },
 						{'penalty': ['l2'], 'C':np.logspace(-5, 4, 10), 'solver': ['lbfgs'] ,'max_iter':[500] },
 						{'penalty': ['l2','l1'], 'C':np.logspace(-5, 4, 10), 'solver': ['liblinear'] ,'max_iter':[500] }

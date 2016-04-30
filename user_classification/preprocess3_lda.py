@@ -38,9 +38,9 @@ for row in csv_f:
 			comment_final_label[comment] = 2 # can't decide
 
 # preprocess 1->2->3
-#npzfile = np.load('data/unigram_bigram_ner_senti_pos_data.npz')
+npzfile = np.load('data/unigram_bigram_ner_senti_pos_data.npz')
 # preprocess 1->3
-npzfile = np.load('data/unigram_bigram_data.npz')
+#npzfile = np.load('data/unigram_bigram_data.npz')
 
 X = npzfile['X']
 y = npzfile['y']
@@ -112,7 +112,7 @@ print 'lda dimension: '+str(np.shape(lda_feature))
 
 X = np.hstack((X,lda_feature))
 # preprocess 1->2->3
-#np.savez('data/unigram_bigram_ner_senti_pos_lda_data.npz',X = X, y = y)
+np.savez('data/unigram_bigram_ner_senti_pos_lda_data.npz',X = X, y = y)
 # preprocess 1->3
-np.savez('data/unigram_bigram_lda_data.npz',X = X, y = y)
+#np.savez('data/unigram_bigram_lda_data.npz',X = X, y = y)
 

@@ -143,9 +143,8 @@ for comment in comment_final_label:
 	comment_entity.append(entity_names)
 	sentiment_score.append((neg,pos,compound))
 
-print len(entity_list)
 entity_list = list(set(entity_list))
-print len(entity_list)
+
 nlp_feature = np.zeros((len(comment_final_label),len(entity_list) + 3 )) # named entity + sentiment
 pos_feature = np.zeros((len(comment_final_label),len(pos_name_set)))
 
@@ -170,4 +169,8 @@ for comment in comment_final_label:
 X = np.hstack((X,nlp_feature))
 X = np.hstack((X,pos_feature))
 np.savez('data/unigram_bigram_ner_senti_pos_data.npz',X = X, y = y)
+
+print 'ner cols: '+str(len(entity_list))
+print 'senti cols: 3'
+print 'pos dimension: ' + str(np.shape(pos_feature))
 
