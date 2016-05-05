@@ -2,7 +2,7 @@ from sklearn.cross_validation import train_test_split
 from sklearn.cross_validation import KFold
 from sklearn.grid_search import GridSearchCV
 from sklearn.metrics import classification_report
-from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import AdaBoostClassifier
 import numpy as np
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import roc_auc_score
@@ -54,7 +54,7 @@ def main():
 					xtrainCur = np.hstack((xtrainBest, trainX_train[:,colInd].reshape(trainX_train.shape[0],-1) ))
 					xtestCur =  np.hstack((xtestBest, trainX_test[:,colInd].reshape(trainX_test.shape[0],-1) ))
 
-				clf = LogisticRegression();
+				clf = AdaBoostClassifier();
 				clf.fit(xtrainCur, trainy_train)
 
 
@@ -110,7 +110,7 @@ def main():
 						{'penalty': ['l2'], 'C':np.logspace(-5, 4, 10), 'solver': ['lbfgs'] ,'max_iter':[500] },
 						{'penalty': ['l2','l1'], 'C':np.logspace(-5, 4, 10), 'solver': ['liblinear'] ,'max_iter':[500] }
 						]
-	clf = GridSearchCV(LogisticRegression(class_weight= 'balanced'), tuned_parameters, cv=5, scoring= None)
+	clf = GridSearchCV(AdaBoostClassifier(class_weight= 'balanced'), tuned_parameters, cv=5, scoring= None)
 
 	clf.fit(trainX[:,feature_index], trainy)
 
