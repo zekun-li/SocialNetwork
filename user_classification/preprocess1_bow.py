@@ -15,6 +15,8 @@ f = open('data/user_comment_label.csv','rb')
 csv_f = csv.reader(f)
 next(csv_f)
 
+# ------------------------------------- get user-comment dictionary ----------------------
+
 for row in csv_f:
 	user_name = row[0].strip() # get user name
 
@@ -34,6 +36,7 @@ for row in csv_f:
 		else:
 			comment_final_label[comment] = 2 # can't decide
 
+# ---------------------------------bow unigram --------------------------------
 
 word_dict = {}
 for comment in comment_final_label:
@@ -97,6 +100,7 @@ for comment in comment_final_label:
 #X_unigram = preprocessing.scale(X_unigram)
 #np.savez('data/unigram_data.npz',X = X_unigram, y = y)
 
+# -------------------------------------------bow bi-gram -------------------------------
 
 word_dict ={}
 for comment in comment_final_label:
