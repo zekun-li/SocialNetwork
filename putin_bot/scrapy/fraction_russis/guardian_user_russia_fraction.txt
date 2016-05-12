@@ -1,0 +1,20 @@
+guardian
+Michael Surkan 35 0.857142857143
+Lev Havryliv 162 0.802469135802
+Ivan Petrov 171 0.853801169591
+Ryszard Ewiak 83 0.951807228916			    duplicate comment
+Susankov 43 0.837209302326
+Seth Fedrick 11 0.909090909091
+damik10 35 0.828571428571			    duplicate comment
+Veronika Volkova 24 0.833333333333
+RaiseFreedomsFlag 10 0.9
+pavbosh 73 0.904109589041                             duplicate comment
+Nill Nilsen 67 0.805970149254			      duplicate comment
+ID2588920 130 0.846153846154
+davewthomas 60 0.916666666667
+warliepoo 43 0.837209302326
+
+
+
+nytimes
+Kevin J 45 0.955555555556
